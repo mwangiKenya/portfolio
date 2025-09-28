@@ -167,6 +167,9 @@ footer {
     height: 45px;
     font-size: 0.9rem;
   }
+  .my-header-div {
+    display: none;
+  }
 }
 
 /* Tablets */
