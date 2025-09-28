@@ -1,146 +1,202 @@
-body
-{
+/* 🌍 Base Reset */
+body {
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  background-color: #fafafa;
   margin-top: 200px;
+  line-height: 1.6;
 }
-.my-main-top-div
-{
-  background-color: rgb(255, 255, 165);
+
+/* 🔝 Fixed Top Bar */
+.my-main-top-div {
+  background-color: #fffec5;
   width: 100%;
   top: 0;
   left: 0;
   padding: 0;
   position: fixed;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.my-header-div
-{
-  background-color: rgba(0, 128, 0, 0.737);
-  margin: 0 2% 0.2% 2%;
+
+/* 🟢 Header */
+.my-header-div {
+  background-color: rgba(0, 128, 0, 0.85);
+  margin: 0 2% 0.5% 2%;
   border: none;
   border-radius: 8px;
   text-align: center;
-  padding-bottom: 0.1%;
-  padding-top: 0.1%;
-}
-.my-nav-section
-{
-  background-color: aqua;
-  margin: 0% 2% 0% 2%;
-  border: none;
-  border-radius: 8px;
-  text-align: center;
-  padding-bottom: 1%;
-  padding-top: 1%;
-}
-.my-nav-link
-{
-  text-decoration: none;
-  padding: 1% 2% 1% 2%;
-  font-weight: bold;
-  margin-left: 3%;
-  transition: 0.45s;
-}
-.my-nav-link:hover
-{
-  background-color: rgba(0, 0, 0, 0.566);
+  padding: 0.5rem 1rem;
   color: white;
 }
-.my-header-name
-{
+.my-header-name {
   text-align: center;
   font-family: "Sofia", sans-serif;
   margin-top: 0;
+  font-size: 1.8rem;
 }
-.my-bio-div
-{
+
+/* 🔗 Navigation */
+.my-nav-section {
+  background-color: #e6f7ff;
+  margin: 0 2%;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0.8rem 0;
+}
+.my-nav-link {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  color: #333;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.my-nav-link:hover {
+  background-color: #00796b;
+  color: #fff;
+}
+
+/* ✨ Bio Section */
+.my-bio-div {
   margin-left: 3%;
+  max-width: 900px;
 }
-strong {
-  color: green;
-}
-.my-description-point
-{
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 2px;
-  word-spacing: 4px;
+.my-description-point {
+  letter-spacing: 1.5px;
+  word-spacing: 3px;
+  font-size: 1rem;
   animation-name: text;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
-
 @keyframes text {
   0% {color: black;}
   35% {color: rgb(1, 76, 119);}
   70% {color: red;}
 }
 
-.my-hire-button
-{
+/* ✅ Strong highlight */
+strong {
+  color: green;
+}
+
+/* 🎯 Hire Button */
+.my-hire-button {
   background-color: aquamarine;
   width: 200px;
   height: 50px;
   border: none;
   border-radius: 9px;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.5s;
-  opacity: 0.8;
+  transition: 0.3s ease;
+  opacity: 0.9;
 }
-.my-hire-button:hover
-{
+.my-hire-button:hover {
   opacity: 1;
+  transform: scale(1.05);
 }
-.my-name-point
-{
-  font-family: 'Montserrat', sans-serif;
-}
-.my-home-holder-div
-{
+
+/* 🏠 Home Holder */
+.my-home-holder-div {
   display: flex;
-  margin-top: 0%;
-  padding-top: 0%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+  padding: 2rem;
+  gap: 2rem;
 }
-@media (max-width: 768px) {
-  .my-home-holder-div {
-    display: block;
-    text-align: center;
-  }
-  .my-nav-section {
-    display: block;
-    background-color: aliceblue;
-  }
-  .my-nav-link {
-    display: block;
-  }
- body {
-  margin-top: 350px;
- }
- .my-main-top-div {
-  width: 400px;
- }
-}
+
+/* 🖼️ Picture Section */
 .my-web-pic-div {
   margin: 0;
   padding: 0;
   text-align: center;
 }
-
 .my-pic {
-  margin: 0;
-  padding: 0;
-  display: block; /* removes inline image spacing */
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
 }
-.action-div
-{
+
+/* 📌 Action Div */
+.action-div {
   text-align: center;
-  margin-top: 3%
+  margin-top: 2rem;
 }
+
+/* ⚫ Footer */
 footer {
-  background-color: black;
+  background-color: #000;
   color: white;
   text-align: center;
-  padding-top: 1%;
-  padding-bottom: 2%;
+  padding: 1rem 0 2rem 0;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsive Styles */
+
+/* Small Phones */
+@media (max-width: 480px) {
+  body {
+    margin-top: 280px;
+    font-size: 0.9rem;
+  }
+  .my-main-top-div {
+    width: 100%;
+  }
+  .my-home-holder-div {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  .my-nav-link {
+    display: block;
+    margin: 0.3rem 0;
+  }
+  .my-hire-button {
+    width: 160px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    margin-top: 300px;
+  }
+  .my-home-holder-div {
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .my-nav-link {
+    margin: 0.5rem;
+  }
+}
+
+/* Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .my-home-holder-div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Large Desktops */
+@media (min-width: 1025px) {
+  .my-home-holder-div {
+    max-width: 1200px;
+    margin: auto;
+  }
 }
