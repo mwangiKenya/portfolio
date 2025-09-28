@@ -1,5 +1,6 @@
 import { HashRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./Home"
+import About from "./About"
 
 function App() {
     return (
@@ -17,11 +18,11 @@ function App() {
               <Link to = '/Projects' className="my-nav-link"> Projects </Link>
               <Link to = '/Contact' className="my-nav-link"> Contact me </Link>
             </nav>
-            <h1 className="my-header-name"> Mwangi Collins </h1>
         </div>
 
         <Routes>
           <Route path="/" element = {<Home/>}/>
+          <Route path="/About" element = {<About/>}/>
         </Routes>
       </HashRouter>
     </>
