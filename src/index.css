@@ -114,7 +114,12 @@ strong {
   .my-nav-link {
     display: block;
   }
-
+ body {
+  margin-top: 350px;
+ }
+ .my-main-top-div {
+  width: 400px;
+ }
 }
 .my-web-pic-div {
   margin: 0;
