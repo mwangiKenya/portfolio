@@ -45,7 +45,7 @@ function CallToAction() {
     return(
         <>
             <div className="my-name-point action-div">
-                <h2> Transform your business todat </h2>
+                <h2> Transform your business today </h2>
                 <p>
                     Running any business? Take it to the next level of 
                     digital error and make it known online.
