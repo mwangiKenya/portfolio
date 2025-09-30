@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 const myBio = {
@@ -20,8 +21,10 @@ function Bio() {
                     creating clean,  robust  and user friendly <br/> websites using mordern technologies, 
                     and data <br/> analysis  services to support decision making.
                 </p>
-
-                <button className="my-hire-button"> Hire me </button>
+                
+                <Link to = "/Hire">
+                    <button className="my-hire-button"> Hire me </button>
+                </Link>
             </div>
         </>
     );
@@ -48,7 +51,7 @@ function CallToAction() {
                 <h2> Transform your business today. </h2>
                 <p>
                     Running any business? Take it to the next level of 
-                    digital error and make it known online.
+                    digital era and make it known online.
                 </p>
                 <p>
                     Contact me for website development, that will showcase your 

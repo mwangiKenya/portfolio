@@ -1,6 +1,8 @@
 import { HashRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./Home"
 import About from "./About"
+import Hire from "./Hire"
+import Skills from "./Skills"
 
 function App() {
     return (
@@ -16,13 +18,15 @@ function App() {
               <Link to = '/About' className="my-nav-link"> About me </Link>
               <Link to = '/Skills' className="my-nav-link"> Skills </Link>
               <Link to = '/Projects' className="my-nav-link"> Projects </Link>
-              <Link to = '/Contact' className="my-nav-link"> Contact me </Link>
+              <Link to = '/Hire' className="my-nav-link"> Contact me </Link>
             </nav>
         </div>
 
         <Routes>
           <Route path="/" element = {<Home/>}/>
           <Route path="/About" element = {<About/>}/>
+          <Route path="/Hire" element = {<Hire/>}/>
+          <Route path="/Skills" element = {<Skills/>}/>
         </Routes>
       </HashRouter>
     </>
