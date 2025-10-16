@@ -1,0 +1,21 @@
+.MyProjectsDiv
+{
+    text-align: center;
+}
+.myLink
+{
+    text-decoration: none;
+    background-color: rgb(43, 231, 43);
+    padding: 1% 4%;
+    border: none;
+    border-radius: 8px;
+}
+.showProject
+{
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0, 255, 255, 0.632);
+    padding: 1% 3% 2% 3%;
+    border: none;
+    border-radius: 8px;
+}

@@ -3,6 +3,7 @@ import Home from "./Home"
 import About from "./About"
 import Hire from "./Hire"
 import Skills from "./Skills"
+import Projects from "./Projects"
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/About" element = {<About/>}/>
           <Route path="/Hire" element = {<Hire/>}/>
           <Route path="/Skills" element = {<Skills/>}/>
+          <Route path="/Projects" element = {<Projects/>}/>
         </Routes>
       </HashRouter>
     </>
