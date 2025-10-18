@@ -11,7 +11,8 @@ function App() {
       <HashRouter>
         <div className="my-main-top-div">
           <div className="my-header-div">
-            <h1> My Portfolio </h1>
+            <h1> Collins Mwangi</h1>
+            
           </div>
           
             <nav className="my-nav-section">

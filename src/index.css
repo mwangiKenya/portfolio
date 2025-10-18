@@ -246,3 +246,17 @@ footer {
     margin: auto;
   }
 }
+
+.my-footer-link-one
+{
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1%;
+}
+.footer-pic
+{
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 9px;
+}

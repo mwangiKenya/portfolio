@@ -9,6 +9,7 @@ function Hire() {
                 <p> Contact details; </p>
                 <a href="mailto: cmwangi0075@gmail.com" className="contact-link"> Send mail </a>
                 <a href="https://wa.me/254705796880?text=Hi%20Collins%2C%20am%20interested%20with%20your%20digital%20services%20and%20I%20would%20like%20to%20know%20more." className="contact-link"> WhatsApp me </a>
+                <a href="https://www.linkedin.com/in/collins-mwangi-918580357"  className="contact-link"> Linkedln </a>
                 <p> Call/SMS; 0705796880 </p>
 
             </div>

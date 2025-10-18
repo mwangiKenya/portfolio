@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 
 function Skills() {
     return(
@@ -39,6 +40,8 @@ function Skills() {
                     With the above skills at my arsenal, am ready to take any project and bring any Idea to life.
                 </p>
             </div>
+
+            <Footer/>
         </>
     );
 }

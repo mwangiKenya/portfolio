@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 
 const myBio = {
     name: "Collins Mwangi",
@@ -54,6 +55,8 @@ function About() {
                 <MyPic/>
                 <MyData/>
             </div>
+
+            <Footer/>
         </>
     );
 }
