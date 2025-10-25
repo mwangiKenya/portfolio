@@ -62,6 +62,10 @@ body {
   background-color: #00796b;
   color: #fff;
 }
+.my-nav-link.active
+{
+  border-bottom: 4px solid black;
+}
 
 /* ✨ Bio Section */
 .my-bio-div {
@@ -142,7 +146,37 @@ footer {
   text-align: center;
   padding: 1rem 0 2rem 0;
   font-size: 0.9rem;
+  display: flex;
 }
+.ShowFooterLink
+{
+  display: block;
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  margin-top: 1%;
+}
+.ShowFooterLink:hover
+{
+  color: yellowgreen;
+}
+.footercontentdiv
+{
+  width: 30%;
+}
+@media screen and (max-width: 768px) {
+  footer{
+    display: block;
+    text-align: center;
+  }
+  .footercontentdiv {
+    margin: auto;
+  }
+  body {
+    margin-top: 120px;
+  }
+}
+
 
 .skill-show-div
 {
@@ -182,7 +216,7 @@ footer {
 /* Small Phones */
 @media (max-width: 480px) {
   body {
-    margin-top: 240px;
+    margin-top: 140px;
     font-size: 0.9rem;
   }
   .my-main-top-div {

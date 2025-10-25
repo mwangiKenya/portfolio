@@ -1,0 +1,24 @@
+.mainDivForWork
+{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.skillsHolderForWork
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.WorkContentDiv
+{
+    background-color: rgb(235, 245, 248);
+    box-shadow: 7px 8px 7px 6px rgba(23, 50, 17, 0.438);
+    margin: 2% 3% 2% 3%;
+    border: none;
+    border-radius: 9px;
+    padding: 1% 2% 1% 2%;
+}
+@media screen and (max-width: 768px) {
+    .skillsHolderForWork{
+        display: block;
+    }
+}

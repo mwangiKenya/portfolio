@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Link } from "react-router-dom"
+import { HashRouter, Routes, Route, NavLink } from "react-router-dom"
 import Home from "./Home"
 import About from "./About"
 import Hire from "./Hire"
@@ -16,11 +16,11 @@ function App() {
           </div>
           
             <nav className="my-nav-section">
-              <Link to = '/' className="my-nav-link"> Home </Link>
-              <Link to = '/About' className="my-nav-link"> About me </Link>
-              <Link to = '/Skills' className="my-nav-link"> Skills </Link>
-              <Link to = '/Projects' className="my-nav-link"> Projects </Link>
-              <Link to = '/Hire' className="my-nav-link"> Contact me </Link>
+              <NavLink to = '/' className="my-nav-link "> Home </NavLink>
+              <NavLink to = '/About' className="my-nav-link "> About me </NavLink>
+              <NavLink to = '/Skills' className="my-nav-link "> Skills </NavLink>
+              <NavLink to = '/Projects' className="my-nav-link"> Projects </NavLink>
+              <NavLink to = '/Hire' className="my-nav-link"> Contact me </NavLink>
             </nav>
         </div>
 
