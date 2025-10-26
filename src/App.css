@@ -112,3 +112,24 @@ footer {
     border-bottom: none;
   }
 }
+
+
+
+/* Fix content being hidden behind navbar */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main, section, .page-content, .skill-show-div {
+  margin-top: 70px; /* Adjust this to match your navbar height */
+}
+
+/* If your navbar is fixed, ensure it stays above other content */
+.my-main-top-div, nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* keeps it above everything */
+  background-color: white; /* or your theme color */
+}
