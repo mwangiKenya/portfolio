@@ -250,6 +250,9 @@ footer {
     width: 90%;
     text-align: center;
   }
+  body{
+    margin-top: 100px;
+  }
 }
 
 /* 📱 RESPONSIVE DESIGN */
