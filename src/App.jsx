@@ -50,8 +50,10 @@ function App() {
                   Contact me
                 </NavLink>
               </div>
+              
             </div>
           </nav>
+          <h1> Collins Mwangi </h1>
         </div>
 
         {/* 🧩 Route Components */}
