@@ -54,7 +54,7 @@ function App() {
               
             </div>
           </nav>
-          <h1> Collins Mwangi </h1>
+          <h1 className="my-name-point"> Collins Mwangi </h1>
         </div>
 
         {/* 🧩 Route Components */}

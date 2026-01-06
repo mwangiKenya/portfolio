@@ -258,7 +258,7 @@ footer {
 /* 📱 RESPONSIVE DESIGN */
 
 /* Small Phones */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   body { margin-top: 140px; font-size: 0.9rem; }
   .my-header-div { display: none; }
   .my-nav-section {
@@ -282,6 +282,7 @@ footer {
     width: 90%;
     padding: 1rem;
   }
+  .my-name-point{display: none;}
 }
 
 /* Tablets */
