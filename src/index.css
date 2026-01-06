@@ -302,6 +302,7 @@ footer {
     height: 22px;
     cursor: pointer;
     margin: 0 auto 0.5rem auto;
+    z-index: 1100; /* above nav links */
   }
   .hamburger .bar {
     height: 3px;
