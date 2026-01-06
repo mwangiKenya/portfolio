@@ -6,7 +6,7 @@ body {
     color: #1a1a1a;
     background-color: #f9fbfc;
     line-height: 1.6;
-    margin-top: 140px;
+    margin-top: 140px; /* Default margin for desktop/laptop */
     scroll-behavior: smooth;
 }
 
@@ -26,13 +26,12 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 130px;
+    height: 130px; /* Default fixed height */
     z-index: 1000;
     padding: 0.5rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    height: 26%;
 }
 
 /* 🟢 HEADER */
@@ -54,7 +53,7 @@ a {
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* 🔗 NAVIGATION (UPDATED FOR HAMBURGER FIX) */
+/* 🔗 NAVIGATION (Desktop/Laptop Defaults) */
 .my-nav-section {
     background-color: #f0f8ff;
     margin: 0 2%;
@@ -64,28 +63,24 @@ a {
 }
 
 .nav-container {
-    display: flex; /* Added for alignment */
-    justify-content: center; /* Added for alignment */
-    align-items: center; /* Added for alignment */
-    width: 100%; /* Added for alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-/* 🍔 Hamburger Icon (Hidden by default on large screens) */
+/* 🍔 Hamburger Icon: HIDE by default (desktop/tablet) */
 .hamburger {
-    display: none; /* HIDE by default (desktop/tablet) */
+    display: none; 
 }
 
+/* 🔗 Navigation Links: SHOW by default (desktop/tablet) */
 .nav-links {
-    display: flex; /* Show links side-by-side by default (desktop/tablet) */
+    display: flex; 
     gap: 0.8rem;
     align-items: center;
     justify-content: center;
     width: auto;
-}
-
-/* Remove unnecessary h1 'Collins Mwangi' inside nav-links */
-.nav-links h1 {
-    display: none;
 }
 
 .my-nav-link {
@@ -104,6 +99,11 @@ a {
 }
 .my-nav-link.active {
     border-bottom: 3px solid #00796b;
+}
+
+/* Added for the extra h1 tag outside nav */
+.my-name-point {
+    display: none; /* Hide the extra h1 for cleaner fixed header */
 }
 
 /* 👤 BIO SECTION */
@@ -263,7 +263,7 @@ footer {
     transform: rotate(10deg) scale(1.1);
 }
 
-/* Responsive Footer */
+/* Responsive Footer (Max 768px applies to both phone and tablet) */
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
@@ -277,28 +277,30 @@ footer {
         text-align: center;
     }
     body{
-        margin-top: 200px;
+        margin-top: 160px; /* Adjusted to a consistent top margin for all mobile */
     }
-    .my-header-div { display: none; }
+    /* We keep the header hidden here if it's considered part of the problem */
+    /* .my-header-div { display: none; } */
 }
 
 /* 📱 RESPONSIVE DESIGN */
 
-/* Small Phones */
+/* Small Phones (Max 480px) */
 @media (max-width: 480px) {
-    body { 
-        margin-top: 160px; /* Adjusted for nav height */
-        font-size: 0.9rem; 
+    /* Reset main top div height for smaller content */
+    .my-main-top-div {
+        height: auto;
+        padding: 0.5rem 0.5rem;
     }
+    
     .my-header-div { display: none; }
+    
     .my-nav-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem;
+        margin: 0 0.5rem;
+        padding: 0.5rem 0;
     }
 
-    /* FIX: Added display: block to nav-container to ensure it exists for flex in small screens */
+    /* Important: The nav-container becomes a column container for mobile */
     .nav-container {
         display: flex;
         flex-direction: column;
@@ -306,39 +308,16 @@ footer {
         width: 100%;
     }
 
-
-    .my-home-holder-div {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem 1rem;
-    }
-    .my-pic {
-        max-width: 280px;
-    }
-    .skill-show-div {
-        width: 90%;
-        padding: 1rem;
-    }
-    .my-main-top-div {
-        height: auto;
-        padding: 0.5rem 0.5rem;
-    }
-    /* Helps anchor links scroll correctly below nav */
-    .my-home-holder-div,
-    .my-bio-div {
-        scroll-margin-top: 140px;
-    }
-
-    /* 🍔 Hamburger Menu Styles (UPDATED: Made visible here) */
+    /* 🍔 Hamburger Menu Styles: SHOW on small screens */
     .hamburger {
-        display: flex; /* OVERRIDE: Show the hamburger icon on small screens */
+        display: flex; /* <-- THIS IS THE KEY: Show the hamburger icon */
         flex-direction: column;
         justify-content: space-between;
         width: 28px;
         height: 22px;
         cursor: pointer;
-        margin: 0 auto 0.5rem auto;
-        z-index: 1100; /* above nav links */
+        margin: 0.5rem auto;
+        z-index: 1100;
     }
     .hamburger .bar {
         height: 3px;
@@ -357,13 +336,14 @@ footer {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    /* 🔗 Navigation Links: Hide by default, show when active on small screens */
     .nav-links {
-        display: none; /* Hide links by default on small screens */
+        display: none; 
         flex-direction: column;
         gap: 0.8rem;
-        margin-top: 0.5rem;
         width: 100%;
         text-align: center;
+        padding-bottom: 0.5rem;
     }
     .nav-links.active {
         display: flex; /* Show links when menu is active */
@@ -372,13 +352,45 @@ footer {
         font-size: 1rem;
         padding: 0.7rem;
     }
+
+    /* General layout adjustments for small screens */
+    .my-home-holder-div {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+    .my-pic {
+        max-width: 280px;
+    }
+    .skill-show-div {
+        width: 90%;
+        padding: 1rem;
+    }
+    .my-home-holder-div,
+    .my-bio-div {
+        scroll-margin-top: 140px;
+    }
 }
 
-/* Tablets */
+/* Tablets (481px to 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-    body {
-        margin-top: 160px; /* Adjusted for nav height */
+    /* Ensure default full navigation is shown on tablets and hamburger is hidden */
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
     }
+    .hamburger {
+        display: none; /* <-- THIS IS THE KEY: Hide hamburger on tablets */
+    }
+    .nav-links {
+        display: flex; /* <-- THIS IS THE KEY: Show full links on tablets */
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Other tablet adjustments */
     .my-home-holder-div {
         flex-direction: column;
         text-align: center;
@@ -394,12 +406,6 @@ footer {
     .my-home-holder-div,
     .my-bio-div {
         scroll-margin-top: 140px;
-    }
-    /* FIX: Ensure full navigation links are shown on tablets */
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
     }
 }
 
