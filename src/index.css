@@ -33,9 +33,6 @@ a {
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   height: 26%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* 🟢 HEADER */
@@ -64,7 +61,6 @@ a {
   border-radius: 12px;
   text-align: center;
   padding: 1rem 0.5rem;
-  width: 100%;
 }
 .my-nav-link {
   text-decoration: none;
@@ -82,34 +78,6 @@ a {
 }
 .my-nav-link.active {
   border-bottom: 3px solid #00796b;
-}
-
-/* Hamburger Icon */
-.hamburger {
-  display: none; /* visible only on small screens */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-  margin: 0.5rem 0;
-  z-index: 1100;
-}
-.hamburger .bar {
-  height: 3px;
-  width: 100%;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-.hamburger .bar.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger .bar.open:nth-child(2) {
-  opacity: 0;
-}
-.hamburger .bar.open:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* 👤 BIO SECTION */
@@ -219,7 +187,7 @@ strong {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* ⚫ FOOTER */
+/* ⚫ FOOTER (Updated & Fixed) */
 footer {
   background-color: #0b0c10;
   color: #ffffff;
@@ -239,29 +207,53 @@ footer {
   bottom: 0;
   box-sizing: border-box;
 }
+
 .footercontentdiv {
   width: 30%;
   min-width: 250px;
   margin: 0;
 }
+
 .ShowFooterLink {
   text-decoration: none;
   color: #00ff88;
   font-weight: bold;
   transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .ShowFooterLink:hover {
   color: #1e90ff;
   transform: scale(1.05);
 }
+
 .footer-pic {
   width: 35px;
   height: 35px;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
+
 .footer-pic:hover {
   transform: rotate(10deg) scale(1.1);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .footercontentdiv {
+    width: 90%;
+    text-align: center;
+  }
+  body{
+    margin-top: 200px;
+  }
+  .my-header-div { display: none; }
 }
 
 /* 📱 RESPONSIVE DESIGN */
@@ -269,13 +261,65 @@ footer {
 /* Small Phones */
 @media (max-width: 480px) {
   body { 
-    margin-top: 160px; 
+    margin-top: 160px; /* Adjusted for nav height */
     font-size: 0.9rem; 
   }
   .my-header-div { display: none; }
+  .my-nav-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .my-home-holder-div {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  .my-pic {
+    max-width: 280px;
+  }
+  .skill-show-div {
+    width: 90%;
+    padding: 1rem;
+  }
+  .my-main-top-div {
+    height: auto;
+    padding: 0.5rem 0.5rem;
+  }
+  /* Helps anchor links scroll correctly below nav */
+  .my-home-holder-div,
+  .my-bio-div {
+    scroll-margin-top: 140px;
+  }
 
-  /* Hamburger Menu */
-  .hamburger { display: flex; }
+  /* 🍔 Hamburger Menu Styles */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    margin: 0 auto 0.5rem auto;
+  }
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .hamburger .bar.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger .bar.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -291,38 +335,45 @@ footer {
     font-size: 1rem;
     padding: 0.7rem;
   }
+}
 
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    margin-top: 160px; /* Adjusted for nav height */
+  }
+  .my-home-holder-div {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  .skill-show-div {
+    width: 75%;
+  }
   .my-main-top-div {
     height: auto;
-    padding: 0.5rem 0.5rem;
-    flex-direction: column;
-    align-items: center;
+    padding: 0.5rem 1rem;
   }
-
   .my-home-holder-div,
   .my-bio-div {
     scroll-margin-top: 140px;
   }
 }
 
-/* Tablets */
-@media (min-width: 481px) and (max-width: 768px) {
-  body { margin-top: 160px; }
-  .my-home-holder-div { flex-direction: column; text-align: center; padding: 2rem; }
-  .skill-show-div { width: 75%; }
-  .my-main-top-div { height: auto; padding: 0.5rem 1rem; }
-  .my-home-holder-div,
-  .my-bio-div { scroll-margin-top: 140px; }
-}
-
 /* Laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .my-home-holder-div { flex-wrap: wrap; justify-content: center; }
+  .my-home-holder-div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /* Large Desktops */
 @media (min-width: 1025px) {
-  .my-home-holder-div { max-width: 1200px; margin: auto; }
+  .my-home-holder-div {
+    max-width: 1200px;
+    margin: auto;
+  }
 }
 
 /* 📬 CONTACT FORM SECTION */
@@ -341,6 +392,7 @@ footer {
   text-align: center;
   font-weight: 700;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -348,12 +400,14 @@ footer {
   max-width: 600px;
   margin: 0 auto;
 }
+
 .form-group label {
   font-weight: 600;
   color: #0a3d62;
   margin-bottom: 0.3rem;
   display: block;
 }
+
 input,
 textarea {
   width: 90%;
@@ -364,12 +418,14 @@ textarea {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
+
 input:focus,
 textarea:focus {
   border-color: #00796b;
   box-shadow: 0 0 6px rgba(0, 121, 107, 0.3);
   outline: none;
 }
+
 .contact-submit {
   background: linear-gradient(135deg, #00c6a7, #1e90ff);
   color: #fff;
@@ -380,6 +436,7 @@ textarea:focus {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .contact-submit:hover {
   transform: scale(1.05);
   background: linear-gradient(135deg, #1e90ff, #00c6a7);
@@ -387,12 +444,22 @@ textarea:focus {
 
 /* Animation */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Contact */
 @media (max-width: 600px) {
-  .contact-section { padding: 1.5rem 1rem; }
-  .contact-section h3 { font-size: 1.3rem; }
+  .contact-section {
+    padding: 1.5rem 1rem;
+  }
+  .contact-section h3 {
+    font-size: 1.3rem;
+  }
 }
