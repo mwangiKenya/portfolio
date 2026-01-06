@@ -49,6 +49,7 @@ function App() {
                 <NavLink to="/Hire" className="my-nav-link" onClick={closeMenu}>
                   Contact me
                 </NavLink>
+                <h1> Collins Mwangi </h1>
               </div>
               
             </div>
