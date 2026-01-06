@@ -253,12 +253,13 @@ footer {
   body{
     margin-top: 200px;
   }
+  .my-header-div { display: none; }
 }
 
 /* 📱 RESPONSIVE DESIGN */
 
 /* Small Phones */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   body { margin-top: 140px; font-size: 0.9rem; }
   .my-header-div { display: none; }
   .my-nav-section {
