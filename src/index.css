@@ -266,14 +266,10 @@ footer {
   }
   .my-header-div { display: none; }
   .my-nav-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0.5rem;
-    overflow-x: auto; /* Allow scrolling if too many links */
-  }
-  .my-nav-link {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
   }
   .my-home-holder-div {
     flex-direction: column;
@@ -287,7 +283,6 @@ footer {
     width: 90%;
     padding: 1rem;
   }
-  
   .my-main-top-div {
     height: auto;
     padding: 0.5rem 0.5rem;
@@ -296,6 +291,49 @@ footer {
   .my-home-holder-div,
   .my-bio-div {
     scroll-margin-top: 140px;
+  }
+
+  /* 🍔 Hamburger Menu Styles */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    margin: 0 auto 0.5rem auto;
+  }
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .hamburger .bar.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger .bar.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .my-nav-link {
+    font-size: 1rem;
+    padding: 0.7rem;
   }
 }
 
