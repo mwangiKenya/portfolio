@@ -260,12 +260,16 @@ footer {
 
 /* Small Phones */
 @media (max-width: 480px) {
-  body { margin-top: 140px; font-size: 0.9rem; }
+  body { 
+    margin-top: 160px; /* Adjusted for nav height */
+    font-size: 0.9rem; 
+  }
   .my-header-div { display: none; }
   .my-nav-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0.5rem;
+    overflow-x: auto; /* Allow scrolling if too many links */
   }
   .my-nav-link {
     margin: 0.3rem 0;
@@ -284,10 +288,22 @@ footer {
     padding: 1rem;
   }
   .my-name-point{display: none;}
+  .my-main-top-div {
+    height: auto;
+    padding: 0.5rem 0.5rem;
+  }
+  /* Helps anchor links scroll correctly below nav */
+  .my-home-holder-div,
+  .my-bio-div {
+    scroll-margin-top: 140px;
+  }
 }
 
 /* Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
+  body {
+    margin-top: 160px; /* Adjusted for nav height */
+  }
   .my-home-holder-div {
     flex-direction: column;
     text-align: center;
@@ -295,6 +311,14 @@ footer {
   }
   .skill-show-div {
     width: 75%;
+  }
+  .my-main-top-div {
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+  .my-home-holder-div,
+  .my-bio-div {
+    scroll-margin-top: 140px;
   }
 }
 
