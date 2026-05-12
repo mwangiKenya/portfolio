@@ -11,9 +11,9 @@ const myBio = {
 function MyPic() {
     return(
         <>
-            <div>
+           {/* <div>
                 <img src="about-removebg-preview.png"/>
-            </div>
+            </div>*/}
         </>
     );
 }
