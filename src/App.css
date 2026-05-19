@@ -1,135 +1,191 @@
-/* Reset default browser padding/margin */
-* {
+/* ===== RESET ===== */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #root {
+html, body {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ✅ Removed the margin and padding that caused space */
 #root {
-  max-width: 100%;
-  text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Allow footer to sit flush at bottom */
-footer {
-  margin: 0;
-  padding: 1rem 0;
+/* ===== FIXED HEADER ===== */
+.my-main-top-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-header-div {
   background-color: #00796b;
-  color: white;
+  padding: 0.6rem 1.5rem;
   text-align: center;
 }
 
-/* 🌟 HAMBURGER MENU STYLING */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+.my-header-name {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* 🍔 Hamburger Icon */
+/* ===== NAV SECTION ===== */
+.my-nav-section {
+  background-color: #ffffff;
+  padding: 0 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 52px;
+}
+
+/* ===== NAV LINKS (desktop) ===== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.my-nav-link {
+  padding: 0.5rem 1rem;
+  color: #00796b;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.my-nav-link:hover {
+  background-color: #e0f2f1;
+  color: #004d40;
+}
+
+.my-nav-link.active {
+  background-color: #00796b;
+  color: #ffffff;
+}
+
+/* ===== HAMBURGER BUTTON ===== */
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
-  padding: 0.6rem;
-  transition: transform 0.3s ease;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
 }
 
 .bar {
-  width: 28px;
+  display: block;
+  width: 26px;
   height: 3px;
   background-color: #00796b;
-  margin: 4px 0;
-  border-radius: 5px;
-  transition: all 0.4s ease;
+  border-radius: 3px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
 }
 
+/* Animated X when open */
 .bar.open:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: translateY(8px) rotate(45deg);
 }
 .bar.open:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 .bar.open:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ✅ Nav Links */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-  margin: auto;
-  margin-bottom: 0;
+/* ===== PAGE CONTENT (pushes below fixed header) ===== */
+.page-content {
+  /* 
+    Adjust this value to equal:
+    header-div height (~46px) + nav height (~52px) = ~98px
+    Tweak if your header sizes differ.
+  */
+  margin-top: 100px;
+  flex: 1;
 }
 
+/* ===== FOOTER ===== */
+footer {
+  background-color: #00796b;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ===== MOBILE NAV ===== */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
   .nav-links {
-    display: block;
+    /* Hidden by default */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
     position: absolute;
-    top: 60px;
+    top: 100%;        /* sits right below the nav bar */
     left: 0;
     width: 100%;
-    background-color: #e6f7ff;
-    border-radius: 0 0 10px 10px;
+    background-color: #f9fffe;
+    border-bottom: 2px solid #00796b;
+    z-index: 999;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
   }
 
   .nav-links.active {
-    max-height: 300px;
+    max-height: 400px;
     opacity: 1;
-    padding: 0.8rem 0;
   }
 
   .my-nav-link {
-    display: block;
-    padding: 1rem;
+    padding: 0.9rem 1.5rem;
     border-radius: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e0f2f1;
+    font-size: 1rem;
   }
 
   .my-nav-link:last-child {
     border-bottom: none;
   }
-}
 
-
-
-/* Fix content being hidden behind navbar */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-main, section, .page-content, .skill-show-div {
-  margin-top: 70px; /* Adjust this to match your navbar height */
-}
-
-/* If your navbar is fixed, ensure it stays above other content */
-.my-main-top-div, nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* keeps it above everything */
-  background-color: white; /* or your theme color */
+  .my-nav-link.active {
+    background-color: #e0f2f1;
+    color: #00796b;
+    border-left: 4px solid #00796b;
+  }
 }
